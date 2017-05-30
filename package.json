@@ -1,0 +1,26 @@
+{
+  "name": "shortify",
+  "version": "1.0.0",
+  "description": "Cool project.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rafael-biz/shortify.git"
+  },
+  "keywords": [
+    "cool"
+  ],
+  "author": "Rafael Bernstorff Biz",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/rafael-biz/shortify/issues"
+  },
+  "homepage": "https://github.com/rafael-biz/shortify#readme",
+  "dependencies": {
+    "express": "^4.15.3",
+    "mysql": "^2.13.0"
+  }
+}
