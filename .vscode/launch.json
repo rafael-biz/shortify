@@ -7,12 +7,28 @@
 		{
 			"type": "node",
 			"request": "launch",
+			"name": "Mocha Tests",
+			"program": "${workspaceRoot}/node_modules/mocha/bin/_mocha",
+			"args": [
+				"-u",
+				"tdd",
+				"--timeout",
+				"999999",
+				"--colors",
+				"${workspaceRoot}/test"
+			],
+			"internalConsoleOptions": "openOnSessionStart"
+		},
+		{
+			"type": "node",
+			"request": "launch",
 			"name": "nodemon",
 			"runtimeExecutable": "nodemon",
 			"runtimeArgs": [
 				"--debug=5858"
 			],
-			"program": "${workspaceRoot}/main.js",
+			"program": "${workspaceRoot}/app/app.js",
+			"cwd": "${workspaceRoot}/app",
 			"restart": true,
 			"port": 5858,
 			"console": "integratedTerminal",
@@ -22,8 +38,15 @@
 			"type": "node",
 			"request": "launch",
 			"name": "Launch Node.JS",
-			"program": "${workspaceRoot}\\main.js",
-			"cwd": "${workspaceRoot}"
+			"program": "${workspaceRoot}/app/app.js",
+			"cwd": "${workspaceRoot}/app"
+		},
+		{
+			"type": "node",
+			"request": "launch",
+			"name": "Launch Tests",
+			"program": "${workspaceRoot}/test/test-app.js",
+			"cwd": "${workspaceRoot}/test"
 		}
 	]
 }
