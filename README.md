@@ -8,11 +8,7 @@ Para cada URL registrada na API, o serviço atribui um valor identificador únic
 
 ### Instalação
 
-1. Instale o Node.js versão 6.10.
-```sh
-$ curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
-sudo apt-get install -y nodejs
-```
+1. Instale o Node.js versão 6.10.3 ou compatível.
 
 2. Faça o checkout do projeto.
 ```sh
@@ -30,8 +26,19 @@ $ npm install --production
 host    all             all             127.0.0.1/32            password
 ```
 
-### Todos
+5. Dentro do diretório do projeto, altere as configurações do projeto em **/app/config.js**.
 
- - Criar scripts de instalação e configuração do serviço.
- - Fazer tratamento de erros na API.
- - Criar os métodos da API de estatísticas.
+6. Dentro do diretório do projeto, inicie o serviço através da linha de comando.
+```sh
+$ node app/app.js
+```
+
+### TODO
+
+ - Implementar GET /users/:userId/stats
+ - Implementar GET /stats/:id
+ - Implementar DELETE /urls/:id
+ - Implemenatr DELETE /user/:userId
+ - Criar script de instalação e configuração do serviço.
+ - Criar script para inicialização do serviço.
+ - Ampliar a cobertura dos testes.
