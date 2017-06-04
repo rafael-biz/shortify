@@ -1,15 +1,25 @@
 //var gulp = require('gulp');
-var express = require('express');
-var app = express();
-
-var controllers = {
-    urls: require('./controllers/urls')
+const express = require('express');
+const app = express();
+const bodyParser = require('body-parser');
+const pg = require('pg');
+const config = require('./config');
+const db = new pg.Pool(config.database);
+const controllers = {
+    urls: require('./controllers/urls'),
+    users: require('./controllers/users')
 };
 
-app.use('', controllers.urls);
+db.on('error', function (err, client) {
+    console.error('Database Error', err.message, err.stack);
+});
 
-app.listen(8080, function () {
-    console.log('Example app listening on port 8080!');
+app.use(bodyParser.json());
+app.use('', controllers.urls(db));
+app.use('', controllers.users(db));
+
+app.listen(config.server.port, function () {
+    console.log(`Example app listening on port ${config.server.port}!`);
 });
 
 module.exports = app;
