@@ -21,7 +21,7 @@ app.use('', controllers.users(db));
 app.use('', controllers.stats(db));
 
 app.listen(config.server.port, function () {
-    console.log(`Example app listening on port ${config.server.port}!`);
+    console.log(`Shortify service running on port ${config.server.port}!`);
 });
 
 module.exports = app;
